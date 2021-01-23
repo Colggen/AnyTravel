@@ -86,7 +86,7 @@ class MyProfileFragment : Fragment() {
 
         view.virtualTourBt.setOnClickListener{
 
-            val intent = Intent(activity,VirtualTourActivity::class.java)
+            val intent = Intent(activity,ListOfVirtualTours::class.java)
             startActivity(intent)
         }
 

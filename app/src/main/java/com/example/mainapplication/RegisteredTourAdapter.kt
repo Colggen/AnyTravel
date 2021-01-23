@@ -3,6 +3,7 @@ package com.example.mainapplication
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -76,6 +77,11 @@ class RegisteredTourAdapter(private val context: Context, private val listener: 
             tours?.get(position)?.let { tour ->
                 showDialog(tour)
             }
+        }
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, TourActivity::class.java)
+            intent.putExtra("tour", tours?.get(position))
+            context.startActivity(intent)
         }
     }
 

@@ -16,11 +16,15 @@ class VirtualTourActivity : AppCompatActivity() {
     private var backgroundImageLoaderTask: ImageLoaderTask? = null
     private var mPlayer: MediaPlayer? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_virtual_tour)
         panoWidgetView = findViewById(R.id.pano_view)
-        loadPanoImage()
+        val type:String? = intent.getStringExtra("type")
+        if(type=="Charyn") {
+            loadPanoImage("charyn_first.jpg","charyn_second.jpg","main.jpg")
+        }
     }
 
 
@@ -53,7 +57,7 @@ class VirtualTourActivity : AppCompatActivity() {
     }
 
     @Synchronized
-    private fun loadPanoImage() {
+    private fun loadPanoImage(firstImage: String, secondImage:String, thirdImage:String) {
         mPlayer = MediaPlayer.create(this,R.raw.example)
         var task = backgroundImageLoaderTask
         if (task != null && !task.isCancelled) {
@@ -67,9 +71,9 @@ class VirtualTourActivity : AppCompatActivity() {
 
         // use the name of the image in the assets/ directory.
         // val panoImageName = "fav_im.jpg"
-        val firstImage = "charyn_first.jpg"
-        val secondImage = "charyn_second.jpg"
-        val thirdImage = "main.jpg"
+//        val firstImage = "charyn_first.jpg"
+//        val secondImage = "charyn_second.jpg"
+//        val thirdImage = "main.jpg"
         val thirdImagee = "Coridor.jpg"
 
         // create the task passing the widget view and call execute to start.

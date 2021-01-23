@@ -38,29 +38,25 @@ class TourActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tour)
-
-        tourBt.setOnClickListener {
-
-            var allow = true
-            val tour = intent.getSerializableExtra("tour") as Tours
-            myRef.child(mAuth.currentUser?.uid!!).child("bookedTours").child(tour.id!!).addValueEventListener(object : ValueEventListener{
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    if(snapshot.exists()){
-                        tourBt.text = "Вы уже зарегестрированы"
-                        allow = false
-                    }
+        val tour: Tours? = intent.getSerializableExtra("tour") as Tours?
+        myRef.child(mAuth.currentUser?.uid!!).child("bookedTours").child(tour?.id!!).addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    tourBt.text = "Вы уже зарегестрированы"
+                    tourBt.isEnabled = false
                 }
-
-                override fun onCancelled(error: DatabaseError) {
-                }
-
-            })
-            if(allow) {
-                showInputDialog()
             }
+
+            override fun onCancelled(error: DatabaseError) {
+            }
+
+        })
+        
+        tourBt.setOnClickListener {
+            showInputDialog()
         }
 
-        val tour: Tours? = intent.getSerializableExtra("tour") as Tours?
+
         detailNameTv.text = "Имя тура: " + tour?.tourName
         detailCompanyNameTv.text = tour?.companyName
         detalePeopleSizeTv.text = "Размер группы: " + tour?.numbersOfPeople.toString()
@@ -75,6 +71,7 @@ class TourActivity : AppCompatActivity() {
         }
         else{
             regPeople.text = "Осталось мест: ${tour?.numbersOfPeople!!}"
+
         }
 
         storageRef.child(tour?.imageId.toString()).downloadUrl.addOnSuccessListener {

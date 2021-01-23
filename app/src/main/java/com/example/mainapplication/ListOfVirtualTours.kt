@@ -6,12 +6,15 @@ import kotlinx.android.synthetic.main.activity_list_of_virtual_tours.*
 
 class ListOfVirtualTours : AppCompatActivity() {
 
-    private var adapter:TourAdapter ?= null
-
+    private var adapter:VirtualTourAdapter ?= null
+    private var listName = arrayOf("Charyn")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_of_virtual_tours)
+
+        adapter = VirtualTourAdapter(listName,this)
         virtualToursRv.adapter = adapter
         virtualToursRv.setHasFixedSize(true)
+
     }
 }

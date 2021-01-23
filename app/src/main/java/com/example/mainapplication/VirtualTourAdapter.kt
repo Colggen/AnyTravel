@@ -1,10 +1,12 @@
 package com.example.mainapplication
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 
 class VirtualTourAdapter(private val dataSet: Array<String>, private val context: Context) :
@@ -37,7 +39,13 @@ class VirtualTourAdapter(private val dataSet: Array<String>, private val context
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
+
         viewHolder.button.text = dataSet[position]
+        viewHolder.button.setOnClickListener {
+            val intent = Intent(context, VirtualTourActivity::class.java)
+            intent.putExtra("type", dataSet[position])
+            context.startActivity(intent)
+        }
     }
 
     // Return the size of your dataset (invoked by the layout manager)

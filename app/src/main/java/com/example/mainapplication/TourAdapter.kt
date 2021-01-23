@@ -110,7 +110,7 @@ class TourAdapter(private val context: Context, private val listener: (Tours) ->
 
 
                     mAuth.currentUser?.getIdToken(true)
-                    myRef.child(mAuth.currentUser?.uid!!).child("savedTours").push().setValue(tour)
+                    myRef.child(mAuth.currentUser?.uid!!).child("savedTours").child(tour.id!!).setValue(tour)
                     Toast.makeText(context, "Тур был успешно добавлен!", Toast.LENGTH_SHORT).show()
 
                 })
