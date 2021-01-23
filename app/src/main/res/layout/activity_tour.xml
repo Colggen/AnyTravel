@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline75"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.43" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline77"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.36" />
+
+        <ImageView
+            android:id="@+id/detailImageOfTour"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toTopOf="@+id/guideline75"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/detailCompanyNameTv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorHalfGray"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Имя компании"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/detailImageOfTour"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline77" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline75"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/detailNameTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:hint="Название тура"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/detailDateTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:hint="Дата"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/regPeople"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Осталось мест :"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/detailPriceTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:hint="Цена"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/detalePeopleSizeTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:hint="Макс кол-во людей"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/detailPhoneTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:hint="Номер телефона"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/detailDescrTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="left"
+                android:hint="Описание тура"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/tourBt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="@color/colorGreen"
+                android:text="Хочу Поехать" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

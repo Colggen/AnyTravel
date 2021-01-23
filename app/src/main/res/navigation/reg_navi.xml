@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/reg_navi"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.mainapplication.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_myProfileFragment"
+            app:destination="@id/myProfileFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.mainapplication.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myProfileFragment"
+        android:name="com.example.mainapplication.MyProfileFragment"
+        android:label="fragment_my_profile"
+        tools:layout="@layout/fragment_my_profile" >
+        <action
+            android:id="@+id/action_myProfileFragment_to_myProfileEdit"
+            app:destination="@id/myProfileEdit" />
+        <action
+            android:id="@+id/action_myProfileFragment_to_tripsFragment"
+            app:destination="@id/tripsFragment" />
+        <action
+            android:id="@+id/action_myProfileFragment_to_rewievsFragment"
+            app:destination="@id/rewievsFragment" />
+        <action
+            android:id="@+id/action_myProfileFragment_self"
+            app:destination="@id/myProfileFragment" />
+        <action
+            android:id="@+id/action_myProfileFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_myProfileFragment_to_secondFragment2"
+            app:destination="@id/secondFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment4"
+        android:name="com.example.mainapplication.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" >
+        <action
+            android:id="@+id/action_thirdFragment4_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myProfileEdit"
+        android:name="com.example.mainapplication.MyProfileEdit"
+        android:label="fragment_my_profile_edit"
+        tools:layout="@layout/fragment_my_profile_edit" >
+        <action
+            android:id="@+id/action_myProfileEdit_to_myProfileFragment"
+            app:destination="@id/myProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rewievsFragment"
+        android:name="com.example.mainapplication.RewievsFragment"
+        android:label="fragment_rewievs"
+        tools:layout="@layout/fragment_rewievs" />
+    <fragment
+        android:id="@+id/tripsFragment"
+        android:name="com.example.mainapplication.TripsFragment"
+        android:label="fragment_trips"
+        tools:layout="@layout/fragment_trips" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.mainapplication.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_travellersFragment2"
+            app:destination="@id/travellersFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment2"
+        android:name="com.example.mainapplication.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" />
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.example.mainapplication.ForgotPasswordFragment"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_restorationFragment"
+            app:destination="@id/restorationFragment" />
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/restorationFragment"
+        android:name="com.example.mainapplication.RestorationFragment"
+        android:label="fragment_restoration"
+        tools:layout="@layout/fragment_restoration" >
+        <action
+            android:id="@+id/action_restorationFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/travellersFragment2"
+        android:name="com.example.mainapplication.TravellersFragment"
+        android:label="fragment_travellers"
+        tools:layout="@layout/fragment_travellers" />
+</navigation>

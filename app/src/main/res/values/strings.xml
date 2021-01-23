@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">AnyTravel</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="firstfragment">FirstFragment</string>
+    <string name="main">Главная</string>
+    <string name="travellers">Поездки</string>
+    <string name="Me">Я</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb224454612232598</string>
+    <string name="facebook_application_id" translatable="false">224454612232598</string>
+    <string name="inbox">Входящие</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="eas">eas</string>
+    <string name="profile">Посмотрите свой профиль</string>
+    <string name="info">Добавьте информацию о себе и фотографию</string>
+    <string name="enter">Войти</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Зарегестрироваться</string>
+    <string name="login">Уже зарегестрировались? Войдите здесь</string>
+    <string name="Reg"><![CDATA[Не зарегестрировались? Зарегеструрейтесь здесь<]]></string>
+    <string name="sreg">Приветствуем! Вы успешно зарегестрировались</string>
+    <string name="createnewaccount">Создать новый аккаунт</string>
+    <string name="enterEmail">Enter email</string>
+    <string name="enterpass">Enter password</string>
+    <string name="agreement">Я соглашаюсь со всеми правилами пользования и соглашениями</string>
+    <string name="next">Продолжить</string>
+    <string name="Profile">Профиль</string>
+    <string name="regtour">Введите количество человек, которые хотят зарегестрироваться на тур</string>
+</resources>

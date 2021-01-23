@@ -1,0 +1,69 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext{
+        kotlin_version = '1.3.72'
+        navigationVersion = '1.0.0-rc02'
+    }
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "android.arch.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+        classpath 'com.google.gms:google-services:4.3.4'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+task copy_cardboard_images() {
+    doFirst {
+        exec {
+            if (System.properties['os.name'].toLowerCase().contains('windows')) {
+                // windows
+                commandLine 'cmd', '/c', 'adb', 'pull', '/mnt/shell/emulated/0/DCIM/CardboardCamera'
+            } else {
+                // linux
+                commandLine 'adb', 'pull', '/mnt/shell/emulated/0/DCIM/CardboardCamera'
+            }
+        }
+    }
+    doLast {
+        copy {
+            from 'CardboardCamera'
+            into 'website/images'
+        }
+    }
+}
+
+task remove_cardboard_images() {
+    doFirst {
+        exec {
+            if (System.properties['os.name'].toLowerCase().contains('windows')) {
+                // windows
+                commandLine 'cmd', '/c', 'adb', 'shell', 'rm',  '-r', '/mnt/shell/emulated/0/DCIM/CardboardCamera'
+            } else {
+                // linux
+                commandLine 'adb', 'shell', 'rm',  '-r', '/mnt/shell/emulated/0/DCIM/CardboardCamera'
+            }
+        }
+    }
+}
+
+task move_cardboard_images() {
+    dependsOn copy_cardboard_images
+    dependsOn remove_cardboard_images
+}

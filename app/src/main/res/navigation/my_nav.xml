@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/firstFragment">
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.mainapplication.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" />
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.mainapplication.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" />
+    <fragment
+        android:id="@+id/myProfileFragment"
+        android:name="com.example.mainapplication.MyProfileFragment"
+        android:label="fragment_my_profile"
+        tools:layout="@layout/fragment_my_profile" >
+        <action
+            android:id="@+id/action_myProfileFragment_to_myProfileEdit2"
+            app:destination="@id/myProfileEdit2" />
+        <action
+            android:id="@+id/action_myProfileFragment_to_rewievsFragment2"
+            app:destination="@id/rewievsFragment2" />
+        <action
+            android:id="@+id/action_myProfileFragment_to_settingsFragment2"
+            app:destination="@id/settingsFragment2" />
+        <action
+            android:id="@+id/action_myProfileFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+        <action
+            android:id="@+id/action_myProfileFragment_to_tripsFragment2"
+            app:destination="@id/tripsFragment2" />
+        <action
+            android:id="@+id/action_myProfileFragment_to_secondFragment3"
+            app:destination="@id/secondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myProfileEdit2"
+        android:name="com.example.mainapplication.MyProfileEdit"
+        android:label="fragment_my_profile_edit"
+        tools:layout="@layout/fragment_my_profile_edit" >
+        <action
+            android:id="@+id/action_myProfileEdit2_to_myProfileFragment"
+            app:destination="@id/myProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rewievsFragment2"
+        android:name="com.example.mainapplication.RewievsFragment"
+        android:label="fragment_rewievs"
+        tools:layout="@layout/fragment_rewievs" />
+    <fragment
+        android:id="@+id/settingsFragment2"
+        android:name="com.example.mainapplication.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment2_to_travellersFragment"
+            app:destination="@id/travellersFragment" />
+        <action
+            android:id="@+id/action_settingsFragment2_to_travellersFragment2"
+            app:destination="@id/travellersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tripsFragment2"
+        android:name="com.example.mainapplication.TripsFragment"
+        android:label="fragment_trips"
+        tools:layout="@layout/fragment_trips" />
+    <fragment
+        android:id="@+id/travellersFragment"
+        android:name="com.example.mainapplication.TravellersFragment"
+        android:label="fragment_travellers"
+        tools:layout="@layout/fragment_travellers" />
+</navigation>

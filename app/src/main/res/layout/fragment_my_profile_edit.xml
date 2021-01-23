@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyProfileEdit">
+
+    <Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#41AE83"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownIdInLayout"
+        tools:targetApi="lollipop" />
+
+    <TextView
+        android:id="@+id/cancelTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Отмена"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07999998" />
+
+    <TextView
+        android:id="@+id/saveTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Сохранить"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/cityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:text="Город проживания" />
+
+        <EditText
+            android:id="@+id/cityEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="24dp"
+            android:ems="10"
+            android:hint="Введите ваш город"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/displayName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:text="Отображаемое имя" />
+
+        <EditText
+            android:id="@+id/nameEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="24dp"
+            android:ems="10"
+            android:hint="Введите ваше имя"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:text="Номер телефона" />
+
+        <EditText
+            android:id="@+id/phoneEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="24dp"
+            android:ems="10"
+            android:hint="Введите номер телефона"
+            android:inputType="phone" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.14" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

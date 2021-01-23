@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright 2016 Google Inc.
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+      http://www.apache.org/licenses/LICENSE-2.0
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VirtualTourActivity">
+
+
+    <!--    <androidx.appcompat.widget.Toolbar-->
+    <!--        android:id="@+id/toolbar"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentTop="true"-->
+    <!--        android:background="?attr/colorPrimary"-->
+    <!--        android:elevation="6dp"-->
+    <!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+    <!--        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>-->
+
+    <!--    <com.google.android.material.tabs.TabLayout-->
+    <!--        android:id="@+id/tab_layout"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@+id/toolbar"-->
+    <!--        android:background="?attr/colorPrimary"-->
+    <!--        android:elevation="6dp"-->
+    <!--        android:minHeight="?attr/actionBarSize"-->
+    <!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>-->
+
+
+    <com.google.vr.sdk.widgets.pano.VrPanoramaView
+        android:id="@+id/pano_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:contentDescription="Это комп"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--        android:contentDescription="@string/codelab_img_description"-->
+
+
+    </com.google.vr.sdk.widgets.pano.VrPanoramaView>
+
+    <ImageView
+        android:id="@+id/imageNt"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/colorHalfGray"
+        android:padding="8dp"
+        android:src="@drawable/ic_baseline_navigate_next_24"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/colorWhite" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <ImageView
+        android:id="@+id/imageNtBack"
+        android:layout_width="wrap_content"
+        android:background="@color/colorHalfGray"
+        android:layout_height="0dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_baseline_navigate_before_24"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.50"
+        app:tint="@color/colorWhite" />
+    <!--        android:layout_below="@id/toolbar"-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    android:theme="@style/Theme.MaterialComponents.Light"
+    app:cardElevation="8dp"
+    android:layout_margin="16dp"
+    app:contentPadding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/numberRegPeopleTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1/3"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:errorEnabled="true"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/ic_baseline_cancel_24"
+            android:hint="Введите полное имя"
+            app:boxStrokeColor="@color/colorGreen"
+            app:hintTextColor="@color/colorGreen"
+            app:startIconDrawable="@drawable/ic_baseline_person_24">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/namePers"
+                android:textCursorDrawable="@drawable/custom_edit_text_cursor"
+                android:layout_width="match_parent"
+                app:endIconDrawable="@drawable/ic_baseline_check_circle_24"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:hintTextColor="@color/colorGreen"
+            app:boxStrokeColor="@color/colorGreen"
+            android:id="@+id/phoneField"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/ic_baseline_cancel_24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:errorEnabled="true"
+            app:startIconDrawable="@drawable/ic_baseline_phone_24">
+
+            <!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phonePerson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textCursorDrawable="@drawable/custom_edit_text_cursor"
+                android:hint="Введите номер телефона"
+                android:inputType="phone" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:id="@+id/checkPhone"
+            style="@style/Widget.AppCompat.CompoundButton.CheckBox"
+            android:buttonTint="@color/colorGreen"
+            android:text="Нету мобильного телефона?"
+            android:layout_height="match_parent"/>
+
+        <Button
+            android:id="@+id/save_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/colorGreen"
+            android:text="Далее" />
+
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
