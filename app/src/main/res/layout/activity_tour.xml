@@ -25,15 +25,14 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.36" />
 
-        <ImageView
-            android:id="@+id/detailImageOfTour"
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:scaleType="fitXY"
             app:layout_constraintBottom_toTopOf="@+id/guideline75"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/detailCompanyNameTv"
@@ -44,7 +43,7 @@
             android:text="Имя компании"
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/detailImageOfTour"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline77" />
@@ -142,7 +141,8 @@
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:background="@color/colorGreen"
-                android:text="Хочу Поехать" />
+                android:text="Хочу Поехать"
+                android:textSize="14sp" />
 
         </LinearLayout>
 

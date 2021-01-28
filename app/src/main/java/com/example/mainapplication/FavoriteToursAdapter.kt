@@ -61,7 +61,7 @@ class FavoriteToursAdapter(private val context: Context,
         val dialog = AlertDialog.Builder(context)
         dialog.setCancelable(false)
         dialog.setTitle("")
-        dialog.setMessage("Вы действительно хотите удалить тур из понравившихся?")
+        dialog.setMessage("Вы действительно хотите удалить тур из сохранённых?")
         dialog.setPositiveButton("Да", DialogInterface.OnClickListener { dialog, id ->
 
             tours?.remove(tour)
@@ -96,6 +96,7 @@ class FavoriteToursAdapter(private val context: Context,
                 showDialog(tour)
             }
         }
+
         holder.itemView.setOnClickListener {
             val intent = Intent(context, TourActivity::class.java)
             intent.putExtra("tour", tours?.get(position))

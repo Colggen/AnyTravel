@@ -4,11 +4,11 @@ import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.widget.AutoCompleteTextView
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager.widget.PagerAdapter
 import com.bumptech.glide.Glide
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
@@ -16,7 +16,6 @@ import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_tour.*
-import kotlinx.android.synthetic.main.input_dialog.*
 
 
 class TourActivity : AppCompatActivity() {
@@ -25,10 +24,7 @@ class TourActivity : AppCompatActivity() {
     private var database: FirebaseDatabase = FirebaseDatabase.getInstance(app1)
     private var myRef: DatabaseReference = database.getReference("users")
     private var mAuth: FirebaseAuth = FirebaseAuth.getInstance(app1)
-
-
     private val app = FirebaseApp.getInstance("secondary")
-
     private var toursRef = FirebaseDatabase.getInstance(app).getReference("tours")
 
     var storage: FirebaseStorage = FirebaseStorage.getInstance(app)
@@ -51,14 +47,43 @@ class TourActivity : AppCompatActivity() {
             }
 
         })
+
+
+
+
+        FirebaseDatabase.getInstance(app).getReference("tourImages").child(tour.id!!).addValueEventListener(object :ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    val images: ArrayList<String> = ArrayList()
+                    snapshot.children.forEach {
+                        images.add(it.value as String)
+                    }
+                    val adapter:PagerAdapter = SliderAdapter(this@TourActivity,images,tour.id!!)
+
+                    viewpager.adapter = adapter
+                }else{
+                    Toast.makeText(this@TourActivity, "Doesnt exist", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+        })
+
+
+
+
         
         tourBt.setOnClickListener {
             showInputDialog()
         }
 
 
-        detailNameTv.text = "Имя тура: " + tour?.tourName
-        detailCompanyNameTv.text = tour?.companyName
+        detailNameTv.text = "Имя тура: " + tour.tourName
+        detailCompanyNameTv.text = tour.companyName
         detalePeopleSizeTv.text = "Размер группы: " + tour?.numbersOfPeople.toString()
         detailDateTv.text = "Дата: " + tour?.dateAndTime
         detailDescrTv.text = "Описание: " + tour?.description
@@ -73,12 +98,12 @@ class TourActivity : AppCompatActivity() {
             regPeople.text = "Осталось мест: ${tour?.numbersOfPeople!!}"
 
         }
-
-        storageRef.child(tour?.imageId.toString()).downloadUrl.addOnSuccessListener {
-            Glide.with(this).load(it)
-                .thumbnail(0.1f).into(detailImageOfTour)
-        }.addOnCanceledListener {
-        }
+//
+//        storageRef.child(tour?.imageId.toString()).downloadUrl.addOnSuccessListener {
+//            Glide.with(this).load(it)
+//                .thumbnail(0.1f).into(detailImageOfTour)
+//        }.addOnCanceledListener {
+//        }
 
     }
 
@@ -187,6 +212,9 @@ class TourActivity : AppCompatActivity() {
             .map { allowedChars.random() }
             .joinToString("")
     }
+
+
+
 
 
 

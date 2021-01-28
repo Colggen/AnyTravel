@@ -19,7 +19,6 @@
             android:id="@+id/numberRegPeopleTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1/3"
             android:textAlignment="center"
             android:textSize="18sp" />
 
@@ -71,14 +70,6 @@
                 android:inputType="phone" />
 
         </com.google.android.material.textfield.TextInputLayout>
-
-        <CheckBox
-            android:layout_width="match_parent"
-            android:id="@+id/checkPhone"
-            style="@style/Widget.AppCompat.CompoundButton.CheckBox"
-            android:buttonTint="@color/colorGreen"
-            android:text="Нету мобильного телефона?"
-            android:layout_height="match_parent"/>
 
         <Button
             android:id="@+id/save_button"

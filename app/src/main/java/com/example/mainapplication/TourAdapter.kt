@@ -15,10 +15,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
+import kotlinx.android.synthetic.main.activity_tour.*
 import kotlinx.android.synthetic.main.tour_item.view.*
 
 class TourAdapter(private val context: Context, private val listener: (Tours) -> Unit):RecyclerView.Adapter<TourAdapter.ViewHolder>(){
@@ -92,6 +92,21 @@ class TourAdapter(private val context: Context, private val listener: (Tours) ->
                 holder.itemView.likeIm.setImageDrawable(it)
             }
 
+            myRef.child(mAuth.currentUser?.uid!!).child("savedTours").child(tour?.id!!).addValueEventListener(object :
+                ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if(snapshot.exists()){
+                        ContextCompat.getDrawable(context, R.drawable.save_like)?.let {
+                            holder.itemView.likeIm.setImageDrawable(it)
+                            holder.itemView.likeIm.isEnabled = false
+                        }
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                }
+
+            })
             holder.itemView.likeIm.setOnClickListener {
 
 //            ContextCompat.getDrawable(context, R.drawable.save_like)?.let {

@@ -4,9 +4,11 @@ import android.annotation.SuppressLint
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.text.isDigitsOnly
+import androidx.core.view.isVisible
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -40,6 +42,8 @@ class UsersRegistrationActivity : AppCompatActivity() {
         var counter = 1
         numberRegPeopleTv.text = "$counter/$quantity"
 
+
+
         nameField.setEndIconOnClickListener {
             namePers.setText("")
         }
@@ -63,14 +67,7 @@ class UsersRegistrationActivity : AppCompatActivity() {
                     phonePerson.error = "Введите правильный номер телефона"
                     check = false
                 }
-                if(phonePerson.text.toString().isEmpty() && !checkPhone.isChecked){
-                    phonePerson.error = "Если у вас нету телефона, заполните поле ниже"
-                }
-                if(checkPhone.isChecked && namePers.text.toString().isNotEmpty()){
-                    phonePerson.error = null
-                    phonePerson.setText("")
-                    check = true
-                }
+
                 if(check) {
 
                     val userName = namePers.text.toString()
@@ -78,7 +75,7 @@ class UsersRegistrationActivity : AppCompatActivity() {
 
                     namePers.setText("")
                     phonePerson.setText("")
-                    checkPhone.isChecked = false
+
                     counter++
 
                     val bookedUsers = BookedUsers()
@@ -106,14 +103,7 @@ class UsersRegistrationActivity : AppCompatActivity() {
                     phonePerson.error = "Введите правильный номер телефона"
                     check = false
                 }
-                if(phonePerson.text.toString().isEmpty() && !checkPhone.isChecked){
-                    phonePerson.error = "Если у вас нету телефона, заполните поле ниже"
-                }
-                if(checkPhone.isChecked && namePers.text.toString().isNotEmpty()){
-                    phonePerson.error = null
-                    phonePerson.setText("")
-                    check = true
-                }
+
                 if(check) {
 
                     val userName = namePers.text.toString()
@@ -121,7 +111,7 @@ class UsersRegistrationActivity : AppCompatActivity() {
 
                     namePers.setText("")
                     phonePerson.setText("")
-                    checkPhone.isChecked = false
+
                     counter++
 
                     val bookedUsers = BookedUsers()
