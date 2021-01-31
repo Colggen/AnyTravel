@@ -103,8 +103,14 @@ class MyProfileFragment : Fragment() {
                 val user = snapshot.getValue<User>()
 
                 view.locationTv.text = user?.city?.capitalize()
-                view.phoneOfUser.text = user?.phone
-                view.nameOfUser.text = App.checkName(user?.name)
+
+                if(user?.name!!.isNotEmpty()) {
+                    view.nameOfUser.text = App.checkName(user?.name)
+                }
+                if(user?.phone!!.isNotEmpty()){
+                    view.phoneOfUser.text = user?.phone
+                }
+
 
 
 

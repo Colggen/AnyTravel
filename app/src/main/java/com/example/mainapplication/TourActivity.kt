@@ -4,11 +4,16 @@ import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.viewpager.widget.PagerAdapter
+import androidx.viewpager.widget.ViewPager
 import com.bumptech.glide.Glide
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
@@ -18,7 +23,7 @@ import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_tour.*
 
 
-class TourActivity : AppCompatActivity() {
+class TourActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
 
     private val app1 = FirebaseApp.getInstance("first")
     private var database: FirebaseDatabase = FirebaseDatabase.getInstance(app1)
@@ -26,14 +31,17 @@ class TourActivity : AppCompatActivity() {
     private var mAuth: FirebaseAuth = FirebaseAuth.getInstance(app1)
     private val app = FirebaseApp.getInstance("secondary")
     private var toursRef = FirebaseDatabase.getInstance(app).getReference("tours")
-
+    private val images: ArrayList<String> = ArrayList()
     var storage: FirebaseStorage = FirebaseStorage.getInstance(app)
     var storageRef = storage.getReferenceFromUrl("gs://anytravel-ef9c8.appspot.com")
+    private var custom_position = 0
+    var direction = 1
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tour)
+
         val tour: Tours? = intent.getSerializableExtra("tour") as Tours?
         myRef.child(mAuth.currentUser?.uid!!).child("bookedTours").child(tour?.id!!).addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -54,15 +62,16 @@ class TourActivity : AppCompatActivity() {
         FirebaseDatabase.getInstance(app).getReference("tourImages").child(tour.id!!).addValueEventListener(object :ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){
-                    val images: ArrayList<String> = ArrayList()
                     snapshot.children.forEach {
                         images.add(it.value as String)
                     }
                     val adapter:PagerAdapter = SliderAdapter(this@TourActivity,images,tour.id!!)
 
                     viewpager.adapter = adapter
-                }else{
-                    Toast.makeText(this@TourActivity, "Doesnt exist", Toast.LENGTH_SHORT).show()
+                    viewpager.addOnPageChangeListener(this@TourActivity)
+
+                    prepareDots(custom_position++)
+
                 }
             }
 
@@ -75,7 +84,6 @@ class TourActivity : AppCompatActivity() {
 
 
 
-
         
         tourBt.setOnClickListener {
             showInputDialog()
@@ -83,7 +91,7 @@ class TourActivity : AppCompatActivity() {
 
 
         detailNameTv.text = "Имя тура: " + tour.tourName
-        detailCompanyNameTv.text = tour.companyName
+        detailCompanyNameTv.text = "Имя компании: " + tour.companyName
         detalePeopleSizeTv.text = "Размер группы: " + tour?.numbersOfPeople.toString()
         detailDateTv.text = "Дата: " + tour?.dateAndTime
         detailDescrTv.text = "Описание: " + tour?.description
@@ -213,9 +221,53 @@ class TourActivity : AppCompatActivity() {
             .joinToString("")
     }
 
+    private fun prepareDots(currentPosition:Int){
+        if(dotsContainer.childCount > 0){
+            dotsContainer.removeAllViews()
+        }
+
+        var dots = ArrayList<ImageView>()
+
+        for(i in 0 until images.size){
+            dots.add(ImageView(this))
+            if(i==currentPosition){
+                dots[i].setImageDrawable(ContextCompat.getDrawable(this,R.drawable.active_dot))
+            }
+            else{
+                dots[i].setImageDrawable(ContextCompat.getDrawable(this,R.drawable.inactive_dot))
+            }
+            var layoutParams:LinearLayout.LayoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+
+            layoutParams.setMargins(4,0,4,0)
+            dotsContainer.addView(dots[i],layoutParams)
+        }
+    }
+
+    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+
+    }
+
+    override fun onPageSelected(position: Int) {
+
+        if(custom_position == images.size-1){
+            direction = 0
+        }
+        if (custom_position == 0){
+            direction = 1
+        }
 
 
+        if (direction == 1){
+            prepareDots(custom_position++)
+        }else{
+            prepareDots(custom_position--)
+        }
 
+    }
+
+    override fun onPageScrollStateChanged(state: Int) {
+
+    }
 
 
 }

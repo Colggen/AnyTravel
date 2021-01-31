@@ -22,7 +22,7 @@ class VirtualTourActivity : AppCompatActivity() {
         setContentView(R.layout.activity_virtual_tour)
         panoWidgetView = findViewById(R.id.pano_view)
         val type:String? = intent.getStringExtra("type")
-        if(type=="Charyn") {
+        if(type=="Чарын") {
             loadPanoImage("charyn_first.jpg","charyn_second.jpg","main.jpg")
         }
     }

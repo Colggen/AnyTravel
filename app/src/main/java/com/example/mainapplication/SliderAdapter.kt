@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.cardview.widget.CardView
 import androidx.viewpager.widget.PagerAdapter
-import androidx.constraintlayout.widget.ConstraintLayout
 import com.bumptech.glide.Glide
 import com.google.firebase.FirebaseApp
 import com.google.firebase.storage.FirebaseStorage
@@ -42,20 +41,21 @@ class SliderAdapter: PagerAdapter{
 
             storageRef.child(images[position]).downloadUrl.addOnSuccessListener {
                 Glide.with(context).load(it).thumbnail(0.1f).into(image)
+
             }.addOnCanceledListener {
                 Log.d("My0", "canceles")
             }.addOnFailureListener {
-
                 Log.d("My0", "canceles ${it.toString()}")
-
             }
 
-//        image.setBackgroundResource()
-        container!!.addView(view)
+
+        container.addView(view)
         return view
     }
 
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
-        container!!.removeView(`object` as CardView)
+
+        container.removeView(`object` as CardView)
     }
+
 }

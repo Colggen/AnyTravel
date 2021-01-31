@@ -9,4 +9,5 @@
     <color name="colorGreen">#00996E</color>
     <color name="colorHalfGray">#80746B6B</color>
     <color name="colorRed">#ff0000</color>
+    <color name="colorBlue">#0080ff</color>
 </resources>

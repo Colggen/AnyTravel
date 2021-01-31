@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.text.isDigitsOnly
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -92,15 +93,15 @@ class MyProfileEdit : Fragment() {
 
             var allow = true
 
-            if(!App.isCorrectPhone(phoneEt.text.toString())){
+            if((!phoneEt.text.toString().isDigitsOnly() && phoneEt.text.toString().length !=11) || phoneEt.text.toString().isEmpty()){
                 phoneEt.error = "Введите корректный номер"
                 allow = false
             }
-            if(!App.isCorrectName(nameEt.text.toString()) ){
+            if(!App.isCorrectName(nameEt.text.toString()) || nameEt.text.toString().isEmpty() ){
                 nameEt.error = "Введите верное имя и фамилию"
                 allow = false
             }
-            if(!App.isCorrectCity(cityEt.text.toString())){
+            if(!App.isCorrectCity(cityEt.text.toString()) || cityEt.text.toString().isEmpty()){
                 cityEt.error = "Введите правильно ваш город"
                 allow = false
             }

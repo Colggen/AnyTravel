@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:fillViewport="true"
     android:layout_height="match_parent">
@@ -16,14 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.43" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline77"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.36" />
+            app:layout_constraintGuide_percent="0.45" />
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
@@ -32,22 +26,19 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline75"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/detailCompanyNameTv"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:id="@+id/dotsContainer"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@color/colorHalfGray"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="Имя компании"
-            android:textColor="@color/colorWhite"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/guideline75"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline77" />
-
+            app:layout_constraintTop_toTopOf="@+id/guideline22"
+            app:layout_constraintVertical_bias="1.0" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -62,11 +53,23 @@
             app:layout_constraintTop_toTopOf="@+id/guideline75"
             app:layout_constraintVertical_bias="0.0">
 
+
+            <TextView
+                android:id="@+id/detailCompanyNameTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:hint="Имя компании"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorBlack"
+                android:textSize="18sp" />
+
             <TextView
                 android:id="@+id/detailNameTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:hint="Название тура"
                 android:textColor="@color/colorBlack"
@@ -145,6 +148,13 @@
                 android:textSize="14sp" />
 
         </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

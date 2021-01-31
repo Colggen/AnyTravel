@@ -15,5 +15,7 @@
         android:layout_height="wrap_content"
         android:background="@color/colorGreen"
         android:hint="TourName"
-        android:text="TourName" />
+        android:text="TourName"
+        android:textColor="@color/colorWhite"
+        style="?attr/materialButtonOutlinedStyle" />
 </androidx.cardview.widget.CardView>
