@@ -17,7 +17,13 @@ AnyTravel - мобильное приложение Android, для облегч
 
 ![Alt Text](removetour.gif)
 
+# Описание вкладки "Профиль"
+
+![Alt Text](profile.gif)
+
 # Настройки приложения
 ![Alt Text](profilesettings.gif)
+
+
 
 
