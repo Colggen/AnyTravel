@@ -85,7 +85,7 @@ class RegistrationFragment : Fragment() {
                 confirmTv.error = "Заполните поле"
                 allow = false
             }
-            if(nameTv.text.toString().isEmpty() || !App.isCorrectName(nameTv.text.toString())){
+            if(nameTv.text.toString().isEmpty()){
                 allow = false
                 nameTv.error = "Введите правильные имя и фамилию"
             }

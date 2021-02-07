@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_tour.*
 class ListOfVirtualTours : AppCompatActivity() {
 
     private var adapter:VirtualTourAdapter ?= null
-    private var listName = arrayOf("Чарын")
+    private var listName = arrayOf("Чарын и Большой Алматинский пик")
     private lateinit var dotsLayout:LinearLayout
     private var custom_position = 0
     override fun onCreate(savedInstanceState: Bundle?) {

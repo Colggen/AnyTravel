@@ -22,8 +22,8 @@ class VirtualTourActivity : AppCompatActivity() {
         setContentView(R.layout.activity_virtual_tour)
         panoWidgetView = findViewById(R.id.pano_view)
         val type:String? = intent.getStringExtra("type")
-        if(type=="Чарын") {
-            loadPanoImage("charyn_first.jpg","charyn_second.jpg","main.jpg")
+        if(type=="Чарын и Большой Алматинский пик") {
+            loadPanoImage("chraynfirst.jpg","chraynsecond.jpg","charynthird.jpg","charynfourth.jpg")
         }
     }
 
@@ -40,8 +40,8 @@ class VirtualTourActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        mPlayer?.release()
-        mPlayer = null
+        //mPlayer?.release()
+        //mPlayer = null
 
     }
 
@@ -57,8 +57,8 @@ class VirtualTourActivity : AppCompatActivity() {
     }
 
     @Synchronized
-    private fun loadPanoImage(firstImage: String, secondImage:String, thirdImage:String) {
-        mPlayer = MediaPlayer.create(this,R.raw.example)
+    private fun loadPanoImage(firstImage: String, secondImage:String, thirdImage:String,fourthImage:String) {
+       // mPlayer = MediaPlayer.create(this,R.raw.example)
         var task = backgroundImageLoaderTask
         if (task != null && !task.isCancelled) {
             // Cancel any task from a previous loading.
@@ -81,7 +81,7 @@ class VirtualTourActivity : AppCompatActivity() {
         var counter = 0
 
         ImageLoaderTask(panoWidgetView, viewOptions, firstImage).execute(this.assets!!)
-        mPlayer?.start()
+        //mPlayer?.start()
         counter++
 
         imageNt.setOnClickListener {
@@ -94,8 +94,12 @@ class VirtualTourActivity : AppCompatActivity() {
                     ImageLoaderTask(panoWidgetView, viewOptions, thirdImage).execute(this.assets!!)
                     counter++
                 }
+                3->{
+                    ImageLoaderTask(panoWidgetView, viewOptions, fourthImage).execute(this.assets!!)
+                    counter++
+                }
                 else-> {
-                    mPlayer?.stop()
+                    //mPlayer?.stop()
                     showDialog()
                 }
             }
@@ -107,7 +111,7 @@ class VirtualTourActivity : AppCompatActivity() {
 
                 1->{
                     finish()
-                    mPlayer?.stop()
+                    //mPlayer?.stop()
                 }
                 2 -> {
                     ImageLoaderTask(panoWidgetView, viewOptions, firstImage).execute(this.assets!!)
@@ -115,6 +119,10 @@ class VirtualTourActivity : AppCompatActivity() {
                 }
                 3-> {
                     ImageLoaderTask(panoWidgetView, viewOptions, secondImage).execute(this.assets!!)
+                    counter--
+                }
+                4->{
+                    ImageLoaderTask(panoWidgetView, viewOptions, thirdImage).execute(this.assets!!)
                     counter--
                 }
             }
@@ -127,8 +135,8 @@ class VirtualTourActivity : AppCompatActivity() {
         dialog.setTitle("")
         dialog.setMessage("Виртуальный тур успешно завершен!")
         dialog.setPositiveButton("Ок", DialogInterface.OnClickListener { dialog, id ->
-            mPlayer?.release()
-            mPlayer = null
+            //mPlayer?.release()
+            //mPlayer = null
             finish()
         })
         dialog.show()
