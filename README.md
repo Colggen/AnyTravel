@@ -9,10 +9,15 @@ AnyTravel - мобильное приложение Android, для облегч
 
 ![Alt Text](tourdescr.gif)
 
-# Описание вкладки "Поездки" и отмена тура <br/>
+# Описание вкладки "Поездки" и детального тура <br/>
 
 ![Alt Text](travellers.gif)
 
+# Удаление туров и вкладок "Забронированные" и "Сохранённые"
+
+![Alt Text](removetour.gif)
 
 # Настройки приложения
 ![Alt Text](profilesettings.gif)
+
+
