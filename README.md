@@ -24,6 +24,8 @@ AnyTravel - мобильное приложение Android, для облегч
 # Настройки приложения
 ![Alt Text](profilesettings.gif)
 
+# Демонстрация виртульного тура
+![Alt Text](virtualtour.gif)
 
 
 
