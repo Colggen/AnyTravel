@@ -6,10 +6,10 @@
     android:layout_margin="8dp"
     app:cardPreventCornerOverlap="true"
     app:cardUseCompatPadding="true">
+
     <ImageView
         android:id="@+id/tourImages"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        app:srcCompat="@drawable/gora">
-    </ImageView>
+        android:layout_height="370dp"
+        android:scaleType="fitXY"></ImageView>
 </androidx.cardview.widget.CardView>

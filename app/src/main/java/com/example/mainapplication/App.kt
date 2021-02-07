@@ -101,6 +101,15 @@ class App: Application() {
             return input?.first()!!.toUpperCase()+input?.substring(1,counter+1)+input?.substring(counter+1).capitalize()
         }
 
+        fun isLetters(string: String): Boolean {
+            for (c in string) {
+                if (c !in 'A'..'Z' && c !in 'a'..'z') {
+                    return false
+                }
+            }
+            return true
+        }
+
 
 
 

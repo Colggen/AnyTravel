@@ -249,6 +249,7 @@ class TourActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
 
     override fun onPageSelected(position: Int) {
 
+        var direction = 1
         if(custom_position == images.size-1){
             direction = 0
         }

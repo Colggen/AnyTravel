@@ -97,11 +97,11 @@ class MyProfileEdit : Fragment() {
                 phoneEt.error = "Введите корректный номер"
                 allow = false
             }
-            if(!App.isCorrectName(nameEt.text.toString()) || nameEt.text.toString().isEmpty() ){
+            if(App.isCorrectName(nameEt.text.toString()) || nameEt.text.toString().isEmpty() ){
                 nameEt.error = "Введите верное имя и фамилию"
                 allow = false
             }
-            if(!App.isCorrectCity(cityEt.text.toString()) || cityEt.text.toString().isEmpty()){
+            if(App.isLetters(cityEt.text.toString()) || cityEt.text.toString().isEmpty()){
                 cityEt.error = "Введите правильно ваш город"
                 allow = false
             }

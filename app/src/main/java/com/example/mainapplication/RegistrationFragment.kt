@@ -14,7 +14,9 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import kotlinx.android.synthetic.main.fragment_my_profile_edit.*
 import kotlinx.android.synthetic.main.fragment_registration.*
+import kotlinx.android.synthetic.main.fragment_registration.phoneTv
 import kotlinx.android.synthetic.main.fragment_registration.view.*
 
 
@@ -83,7 +85,7 @@ class RegistrationFragment : Fragment() {
                 confirmTv.error = "Заполните поле"
                 allow = false
             }
-            if(nameTv.text.toString().isEmpty() && !App.isCorrectName(nameTv.text.toString())){
+            if(nameTv.text.toString().isEmpty() || !App.isCorrectName(nameTv.text.toString())){
                 allow = false
                 nameTv.error = "Введите правильные имя и фамилию"
             }

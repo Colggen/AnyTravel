@@ -4,6 +4,7 @@
 
 
     class Tours : Serializable{
+
         var id: String? = null
         var tourName: String?=null
         var description: String ?= null
@@ -15,4 +16,5 @@
         var phone: String?=null
         var numbersOfPeople: Int?=null
         var bookedId: String? = null
+
     }

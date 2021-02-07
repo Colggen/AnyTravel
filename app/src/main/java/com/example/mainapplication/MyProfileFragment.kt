@@ -166,7 +166,6 @@ class MyProfileFragment : Fragment() {
         //view.add.setOnClickListener { findNavController().navigate(R.id.action_myProfileFragment_to_myProfileEdit2) }
 
         view.buttonEdit.setOnClickListener { findNavController().navigate(R.id.action_myProfileFragment_to_myProfileEdit2) }
-        view.tripsBt.setOnClickListener { findNavController().navigate(R.id.action_myProfileFragment_to_secondFragment) }
 
 
         view.settingsImage.setOnClickListener {
