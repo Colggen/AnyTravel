@@ -15,4 +15,4 @@ AnyTravel - мобильное приложение Android, для облегч
 
 
 # Настройки приложения
-![Alt Text](deletetours.gif)
+![Alt Text](profilesettings.gif)
