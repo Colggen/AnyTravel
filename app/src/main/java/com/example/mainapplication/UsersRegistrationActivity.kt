@@ -78,6 +78,9 @@ class UsersRegistrationActivity : AppCompatActivity() {
 
                     counter++
 
+
+
+
                     val bookedUsers = BookedUsers()
                     bookedUsers.name = userName
                     bookedUsers.phone = userPhone
