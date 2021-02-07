@@ -4,5 +4,8 @@ AnyTravel - мобильное приложение Android, для облегч
 ## Процесс регистрации и входа в приложение
 ![Alt Text](entrance-video.gif)
 
+## Описание главной страницы, с регистрацией на тур.
+![Alt Text](tourdescr.gif)
+
 ## Настройки приложения
 ![Alt Text](settings.gif)
