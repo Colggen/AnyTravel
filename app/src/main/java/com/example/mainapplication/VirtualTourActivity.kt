@@ -14,7 +14,6 @@ class VirtualTourActivity : AppCompatActivity() {
 
     private var panoWidgetView: VrPanoramaView? = null
     private var backgroundImageLoaderTask: ImageLoaderTask? = null
-    private var mPlayer: MediaPlayer? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,9 +29,7 @@ class VirtualTourActivity : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
-//
-//        val mPlayer = MediaPlayer.create(this,R.raw.example)
-//        mPlayer.stop()
+
 
         panoWidgetView?.pauseRendering()
 
@@ -40,17 +37,13 @@ class VirtualTourActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        //mPlayer?.release()
-        //mPlayer = null
+
 
     }
 
 
     override fun onDestroy() {
         super.onDestroy()
-//
-//        val mPlayer = MediaPlayer.create(this,R.raw.example)
-//        mPlayer.stop()
 
         panoWidgetView?.shutdown()
 
@@ -58,30 +51,25 @@ class VirtualTourActivity : AppCompatActivity() {
 
     @Synchronized
     private fun loadPanoImage(firstImage: String, secondImage:String, thirdImage:String,fourthImage:String) {
-       // mPlayer = MediaPlayer.create(this,R.raw.example)
+
         var task = backgroundImageLoaderTask
         if (task != null && !task.isCancelled) {
-            // Cancel any task from a previous loading.
+
             task.cancel(true)
         }
 
-        // pass in the name of the image to load from assets.
+
         val viewOptions = VrPanoramaView.Options()
         viewOptions.inputType = VrPanoramaView.Options.TYPE_MONO
 
-        // use the name of the image in the assets/ directory.
-        // val panoImageName = "fav_im.jpg"
-//        val firstImage = "charyn_first.jpg"
-//        val secondImage = "charyn_second.jpg"
-//        val thirdImage = "main.jpg"
+
         val thirdImagee = "Coridor.jpg"
 
-        // create the task passing the widget view and call execute to start.
 
         var counter = 0
 
         ImageLoaderTask(panoWidgetView, viewOptions, firstImage).execute(this.assets!!)
-        //mPlayer?.start()
+
         counter++
 
         imageNt.setOnClickListener {
@@ -111,7 +99,7 @@ class VirtualTourActivity : AppCompatActivity() {
 
                 1->{
                     finish()
-                    //mPlayer?.stop()
+
                 }
                 2 -> {
                     ImageLoaderTask(panoWidgetView, viewOptions, firstImage).execute(this.assets!!)
@@ -135,8 +123,7 @@ class VirtualTourActivity : AppCompatActivity() {
         dialog.setTitle("")
         dialog.setMessage("Виртуальный тур успешно завершен!")
         dialog.setPositiveButton("Ок", DialogInterface.OnClickListener { dialog, id ->
-            //mPlayer?.release()
-            //mPlayer = null
+
             finish()
         })
         dialog.show()

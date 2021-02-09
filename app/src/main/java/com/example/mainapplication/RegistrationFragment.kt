@@ -71,7 +71,7 @@ class RegistrationFragment : Fragment() {
         layoutView?.proceedBt?.setOnClickListener {
 
             var allow = true
-            activity?.let { it1 -> App.writeSharedPreferences(it1, "isLogged", "true") }
+            activity?.let {it1 -> App.writeSharedPreferences(it1, "isLogged", "true") }
 
             if(!isValidEmail(loginEt.text)){
                 loginEt.error = "Заполните поле"

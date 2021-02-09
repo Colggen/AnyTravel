@@ -249,15 +249,12 @@ class TourActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
 
     override fun onPageSelected(position: Int) {
 
-        var direction = 1
         if(custom_position == images.size-1){
             direction = 0
         }
         if (custom_position == 0){
             direction = 1
         }
-
-
         if (direction == 1){
             prepareDots(custom_position++)
         }else{

@@ -32,7 +32,7 @@ class FirstFragment : Fragment() {
     private var myRef: DatabaseReference? = null
     private var database: FirebaseDatabase? = null
 
-    private var adapter:TourAdapter ?= null
+    private var adapter: TourAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,7 +62,7 @@ class FirstFragment : Fragment() {
             TourAdapter(it) {
                 Log.d("FirstFragment", "clicked")
                 val intent = Intent(activity, TourActivity::class.java)
-              startActivity(intent)
+                startActivity(intent)
             }
         }
 
@@ -84,18 +84,16 @@ class FirstFragment : Fragment() {
                             list.add(tour)
                         }
                     }
-                    if(list.size==0){
+                    if (list.size == 0) {
                         view.toursRv.visibility = View.GONE
                         view.noItemLl.visibility = View.VISIBLE
-                    }
-                    else{
+                    } else {
                         view.toursRv.visibility = View.VISIBLE
                         view.noItemLl.visibility = View.GONE
                     }
                     Log.d("FirstFragment", list[0].companyName.toString())
                     adapter?.setTours(list)
-                }
-                else{
+                } else {
                     view.toursRv.visibility = View.GONE
                     view.noItemLl.visibility = View.VISIBLE
                 }
