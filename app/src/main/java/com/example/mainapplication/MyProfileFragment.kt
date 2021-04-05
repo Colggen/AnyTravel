@@ -105,7 +105,7 @@ class MyProfileFragment : Fragment() {
                 view.locationTv.text = user?.city?.capitalize()
 
                 if(user?.name!!.isNotEmpty()) {
-                    view.nameOfUser.text = App.checkName(user?.name)
+                    view.nameOfUser.text = user?.name
                 }
                 if(user?.phone!!.isNotEmpty()){
                     view.phoneOfUser.text = user?.phone

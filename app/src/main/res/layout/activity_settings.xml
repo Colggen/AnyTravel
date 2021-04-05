@@ -50,7 +50,7 @@
                 android:background="@drawable/box2"
                 android:gravity="fill"
                 android:padding="12dp"
-                android:text="Бронирования и поездки"
+                android:text="@string/tr"
                 android:textSize="18sp" />
 
             <LinearLayout
@@ -67,7 +67,7 @@
                     android:layout_weight="0.9"
                     android:gravity="fill"
                     android:padding="12dp"
-                    android:text="Поездки"
+                    android:text="@string/trav"
                     android:textSize="18sp" />
 
                 <ImageView
@@ -94,7 +94,7 @@
                 android:layout_height="47dp"
                 android:background="@drawable/box"
                 android:gravity="center"
-                android:text="Выход"
+                android:text="@string/exit"
                 android:textColor="#41AE83"
                 android:textSize="18sp" />
 

@@ -54,37 +54,37 @@
                 android:id="@+id/RegTourNameTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Название тура" />
+                android:hint="@string/sfda" />
 
             <TextView
                 android:id="@+id/RegDateTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Дата" />
+                android:hint="@string/cxvz" />
 
             <TextView
                 android:id="@+id/RegPriceTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Стоимость" />
+                android:hint="@string/qaz" />
 
             <TextView
                 android:id="@+id/RegPeopleSizeTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Размер группы" />
+                android:text="@string/weq" />
 
             <TextView
                 android:id="@+id/RegPhoneTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Связь" />
+                android:text="@string/qw" />
 
             <TextView
                 android:id="@+id/RegDescriptionTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Описание" />
+                android:hint="@string/qds" />
         </LinearLayout>
 
         <androidx.constraintlayout.widget.Guideline
@@ -107,7 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@null"
-            android:text="Отменить тур"
+            android:text="@string/qdw"
             android:textColor="@color/colorRed"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"

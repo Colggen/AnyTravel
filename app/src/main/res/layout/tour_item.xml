@@ -56,7 +56,7 @@
                 android:textColorHint="@color/colorBlack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Название тура" />
+                android:hint="@string/vxc" />
 
             <TextView
                 android:id="@+id/dateTv"
@@ -64,7 +64,7 @@
                 android:textColorHint="@color/colorBlack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Дата" />
+                android:hint="@string/qsa" />
 
             <TextView
                 android:id="@+id/priceTv"
@@ -72,7 +72,7 @@
                 android:textColorHint="@color/colorBlack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Стоимость" />
+                android:hint="@string/qwsac" />
 
             <TextView
                 android:id="@+id/peopleSizeTv"
@@ -80,7 +80,7 @@
                 android:textColorHint="@color/colorBlack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Размер группы" />
+                android:text="@string/adsfv" />
 
             <TextView
                 android:id="@+id/phoneTv"
@@ -88,7 +88,7 @@
                 android:textColorHint="@color/colorBlack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Связь" />
+                android:text="@string/fsdv" />
 
             <TextView
                 android:id="@+id/descriptionTv"
@@ -96,7 +96,7 @@
                 android:textColorHint="@color/colorBlack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Описание" />
+                android:hint="@string/sdfcv" />
         </LinearLayout>
 
         <androidx.constraintlayout.widget.Guideline

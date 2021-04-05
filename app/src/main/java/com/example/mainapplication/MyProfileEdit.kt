@@ -93,11 +93,11 @@ class MyProfileEdit : Fragment() {
 
             var allow = true
 
-            if((!phoneEt.text.toString().isDigitsOnly() && phoneEt.text.toString().length !=11) || phoneEt.text.toString().isEmpty()){
+            if((!phoneEt.text.toString().isDigitsOnly() || phoneEt.text.toString().length !=11) || phoneEt.text.toString().isEmpty()){
                 phoneEt.error = "Введите корректный номер"
                 allow = false
             }
-            if(App.isCorrectName(nameEt.text.toString()) || nameEt.text.toString().isEmpty() ){
+            if(App.isLetters(nameEt.text.toString()) || nameEt.text.toString().isEmpty() ){
                 nameEt.error = "Введите верное имя и фамилию"
                 allow = false
             }

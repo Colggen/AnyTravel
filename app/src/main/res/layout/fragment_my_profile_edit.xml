@@ -24,7 +24,7 @@
         android:id="@+id/cancelTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Отмена"
+        android:text="@string/cv"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +37,7 @@
         android:id="@+id/saveTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Сохранить"
+        android:text="@string/dg"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="16dp"
-            android:text="Город проживания" />
+            android:text="@string/sdg" />
 
         <EditText
             android:id="@+id/cityEt"
@@ -74,7 +74,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginRight="24dp"
             android:ems="10"
-            android:hint="Введите ваш город"
+            android:hint="@string/sdgw"
             android:inputType="textPersonName" />
 
         <TextView
@@ -83,7 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="16dp"
-            android:text="Отображаемое имя" />
+            android:text="@string/s" />
 
         <EditText
             android:id="@+id/nameEt"
@@ -93,7 +93,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginRight="24dp"
             android:ems="10"
-            android:hint="Введите ваше имя"
+            android:hint="@string/d"
             android:inputType="textPersonName" />
 
         <TextView
@@ -102,7 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="16dp"
-            android:text="Номер телефона" />
+            android:text="@string/dc" />
 
         <EditText
             android:id="@+id/phoneEt"
@@ -112,7 +112,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginRight="24dp"
             android:ems="10"
-            android:hint="Введите номер телефона"
+            android:hint="@string/fg"
             android:inputType="phone" />
 
     </LinearLayout>

@@ -33,7 +33,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Параметры"
+                    android:text="@string/mn"
                     android:textColor="#131212"
                     android:textSize="24sp" />
             </androidx.appcompat.widget.Toolbar>
@@ -45,7 +45,7 @@
                 android:background="@color/colorGray"
                 android:gravity="fill"
                 android:padding="12dp"
-                android:text="Предпочтения"
+                android:text="@string/c"
                 android:textSize="18sp" />
 
             <LinearLayout
@@ -63,7 +63,7 @@
                     android:layout_weight="0.9"
                     android:gravity="fill"
                     android:padding="12dp"
-                    android:text="Язык"
+                    android:text="@string/cvb"
                     android:textSize="18sp" />
 
                 <ImageView
@@ -89,7 +89,7 @@
                     android:layout_weight="0.9"
                     android:gravity="fill"
                     android:padding="12dp"
-                    android:text="Уведомления"
+                    android:text="@string/nbv"
                     android:textSize="18sp" />
 
                 <ImageView
@@ -109,7 +109,7 @@
                 android:background="@drawable/box2"
                 android:gravity="fill"
                 android:padding="12dp"
-                android:text="Бронирования и платежы"
+                android:text="@string/as"
                 android:textSize="18sp" />
 
             <LinearLayout
@@ -125,7 +125,7 @@
                     android:layout_weight="0.9"
                     android:gravity="fill"
                     android:padding="12dp"
-                    android:text="Варианты оплаты"
+                    android:text="@string/vb"
                     android:textSize="18sp" />
 
                 <ImageView
@@ -152,7 +152,7 @@
                 android:layout_height="47dp"
                 android:background="@drawable/box"
                 android:gravity="center"
-                android:text="Выход"
+                android:text="@string/cvs"
                 android:textColor="#41AE83"
                 android:textSize="18sp" />
 
@@ -177,7 +177,7 @@
                     android:layout_weight="0.9"
                     android:gravity="fill"
                     android:padding="12dp"
-                    android:text="Конфиденциальность"
+                    android:text="@string/df"
                     android:textSize="18sp" />
 
                 <ImageView

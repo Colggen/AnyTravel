@@ -29,7 +29,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
             android:fontFamily="Montserrat"
-            android:text="Регистрация"
+            android:text="@string/q"
             android:textColor="@color/colorBlack"
             android:textSize="18sp" />
 
@@ -41,7 +41,7 @@
             android:background="@drawable/edit_back"
             android:ems="10"
             android:fontFamily="@font/montserrat"
-            android:hint="Введите логин"
+            android:hint="@string/qe2"
             android:inputType="textEmailAddress"
             android:padding="8dp" />
 
@@ -53,7 +53,7 @@
             android:background="@drawable/edit_back"
             android:ems="10"
             android:fontFamily="@font/montserrat"
-            android:hint="Введите пароль"
+            android:hint="@string/qa"
             android:inputType="textPassword"
             android:padding="8dp" />
 
@@ -65,7 +65,7 @@
             android:background="@drawable/edit_back"
             android:ems="10"
             android:fontFamily="@font/montserrat"
-            android:hint="Подтвердите пароль"
+            android:hint="@string/xc"
             android:inputType="textPassword"
             android:padding="8dp" />
 
@@ -77,7 +77,7 @@
             android:background="@drawable/edit_back"
             android:ems="10"
             android:fontFamily="@font/montserrat"
-            android:hint="Введите полное имя"
+            android:hint="@string/vnb"
             android:inputType="textPersonName"
             android:padding="8dp" />
 
@@ -86,7 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Введите номер телефона"
+            android:hint="@string/tyh"
             android:background="@drawable/edit_back"
             android:fontFamily="@font/montserrat"
             android:ems="10"
@@ -102,7 +102,7 @@
             android:layout_marginEnd="8dp"
             android:background="@color/colorGreen"
             android:fontFamily="@font/montserrat"
-            android:text="Продолжить"
+            android:text="@string/ok"
             android:textColor="#fff" />
 
         <LinearLayout

@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:hint="Имя компании"
+                android:hint="@string/nm"
                 android:textColor="@color/colorBlack"
                 android:textColorHint="@color/colorBlack"
                 android:textSize="18sp" />
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:hint="Название тура"
+                android:hint="@string/nme"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp" />
 
@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:hint="Дата"
+                android:hint="@string/dat"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp" />
 
@@ -91,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Осталось мест :"
+                android:text="@string/quan"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp" />
 
@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:hint="Цена"
+                android:hint="@string/price"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp" />
 
@@ -111,7 +111,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:hint="Макс кол-во людей"
+                android:hint="@string/size"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp" />
 
@@ -121,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:hint="Номер телефона"
+                android:hint="@string/numb"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp" />
 
@@ -132,7 +132,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:gravity="left"
-                android:hint="Описание тура"
+                android:hint="@string/descp"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp" />
 
@@ -144,7 +144,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:background="@color/colorGreen"
-                android:text="Хочу Поехать"
+                android:text="@string/go"
                 android:textSize="14sp" />
 
         </LinearLayout>

@@ -13,12 +13,10 @@ class ListOfVirtualTours : AppCompatActivity() {
 
     private var adapter:VirtualTourAdapter ?= null
     private var listName = arrayOf("Чарын и Большой Алматинский пик")
-    private lateinit var dotsLayout:LinearLayout
-    private var custom_position = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        supportActionBar?.setTitle("Список виртуальных туров")
+        supportActionBar?.title = "Список виртуальных туров"
         setContentView(R.layout.activity_list_of_virtual_tours)
         adapter = VirtualTourAdapter(listName, this)
         virtualToursRv.adapter = adapter
